@@ -1,0 +1,13 @@
+{
+  "name": "cloud-run-video-analysis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/video-intelligence": "^5.3.0",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0"
+  }
+}

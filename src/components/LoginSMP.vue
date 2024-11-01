@@ -37,7 +37,7 @@ export default {
 
         console.log("Logged in:", userCredential.user);
         // 登录成功后，重定向到 videoWarehouse 页面
-        this.router.push('/videoWarehouse');
+        this.router.push('/ThumbnailPage');
       } catch (error) {
         console.error("Login failed:", error.message);
         console.error("Error code:", error.code);  // 捕获错误代码

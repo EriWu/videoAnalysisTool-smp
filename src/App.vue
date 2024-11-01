@@ -1,25 +1,24 @@
 
-
-
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/home">Home</router-link>
-
-    </nav>
-    <div v-if="user">
-      <p>Welcome, {{ user.email }}</p>
-      <button @click="logout">Logout</button>
-    </div>
-    <router-view/>
+    <header class="app-header">
+      <div class="logo-container">
+        <h1 class="company-name">See Me Please</h1>
+      </div>
+      <nav class="main-nav">
+        <router-link to="/" exact>Home</router-link>
+      </nav>
+      <div class="login-container">
+        <router-link to="/login">Login</router-link>
+      </div>
+    </header>
+    <router-view />
   </div>
 </template>
 
 <script>
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebaseConfig";
-
 
 export default {
   data() {
@@ -50,13 +49,70 @@ export default {
   }
 };
 </script>
-<style>
+
+
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #f8f8f8;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f9f7e9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.main-nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.main-nav a:hover {
+  color: #007BFF;
+}
+
+.main-nav a.router-link-exact-active {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.login-container {
+  flex: 1;
+  text-align: right;
+}
+
+.login-container a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.login-container a:hover {
+  color: #007BFF;
 }
 </style>
+

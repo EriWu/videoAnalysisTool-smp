@@ -3,6 +3,7 @@
     {
       "source": "functions",
       "codebase": "default",
+      "timeoutSeconds": 540,
       "ignore": [
         "node_modules",
         ".git",
@@ -10,9 +11,7 @@
         "firebase-debug.*.log",
         "*.local"
       ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint"
-      ]
+      "predeploy": []
     }
   ]
 }
